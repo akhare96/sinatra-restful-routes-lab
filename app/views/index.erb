@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Recipes</title>
+</head>
+<body>
+
+<h1> Here is a list of your current recipes:</h1>
+
+<ol type = "1">
+<% @recipes.each {|recipe| %>
+    <li>
+        <a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a>
+    </li>
+<% } %>
+</ol>
+
+<p> Click below to add a new recipe </p>
+    <form action = "/recipes/new" method = "get">
+        <input type = "submit" value = "add"/>
+    </form>
+</body>
+</html>
+
+<!--
+<a href="/recipes/new">here</a>
+-->
